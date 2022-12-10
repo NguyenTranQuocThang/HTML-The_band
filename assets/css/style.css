@@ -93,7 +93,7 @@ html {
 }
 
 #nav > li {
-  display: inline-block;
+  display: block;
 }
 #nav li {
   position: relative;
@@ -139,6 +139,13 @@ html {
 
 #nav .nav-arrow-down {
   font-size: 12px;
+}
+
+#header .mobile-menu-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
 }
 
 #header .mobile-menu-btn,
