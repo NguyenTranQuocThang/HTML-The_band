@@ -55,6 +55,10 @@
   margin-top: 16px !important;
 }
 
+.mt-32 {
+  margin-top: 32px !important;
+}
+
 html {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -80,7 +84,7 @@ html {
   left: 0;
   right: 0;
   z-index: 1;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 #nav {
@@ -93,7 +97,7 @@ html {
 }
 
 #nav > li {
-  display: block;
+  display: inline-block;
 }
 #nav li {
   position: relative;
@@ -239,7 +243,7 @@ html {
 }
 
 #content .members-list {
-  margin-top: 48px;
+  margin-top: 32px;
 }
 
 #content .member-name {
@@ -292,8 +296,8 @@ html {
 }
 
 .places-list {
-  margin-top: 32px;
-  margin-bottom: 48px;
+  margin-top: 16px;
+  /* margin-bottom: 48px; */
 }
 
 .place-img {
@@ -329,6 +333,8 @@ html {
   display: inline-block;
   margin-top: 15px;
   cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
 }
 
 .place-buy-btn:hover {
@@ -456,6 +462,15 @@ header.model-header {
 .contact-info i[class*="ti-"] {
   width: 30px;
   display: inline-block;
+}
+
+.contact-info a {
+  color: #101aef;
+  opacity: 0.8;
+}
+
+.contact-info a:hover {
+  opacity: 1.2;
 }
 
 .contact-form {

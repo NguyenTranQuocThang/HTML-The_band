@@ -16,7 +16,7 @@
     <div id="header">
       <!-- Begin nav -->
       <ul id="nav">
-        <li><a href="#content">Home</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="#content">Band</a></li>
         <li><a href="#tour">Tour</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -66,21 +66,21 @@
           competition The X Factor in 2010.
         </div>
         <div class="row members-list">
-          <div class="col col-third text-center">
+          <div class="s-col-full mt-32 col col-third text-center">
             <p class="member-name">Zayn Malik</p>
             <img
               src="/assets/img/band/member1.jpeg"
               class="member-img"
             /><img />
           </div>
-          <div class="col col-third text-center">
+          <div class="s-col-full mt-32 col col-third text-center">
             <p class="member-name">Zayn Malik</p>
             <img
               src="/assets/img/band/member1.jpeg"
               class="member-img"
             /><img />
           </div>
-          <div class="col col-third text-center">
+          <div class="s-col-full mt-32 col col-third text-center">
             <p class="member-name">Zayn Malik</p>
             <img
               src="/assets/img/band/member1.jpeg"
@@ -102,7 +102,7 @@
             <li>November <span class="quantity">3</span></li>
           </ul>
           <div class="row places-list">
-            <div class="col col-third">
+            <div class="col col-third s-col-full mt-16">
               <img
                 src="/assets/img/place/place1.jpeg"
                 alt="New York"
@@ -118,11 +118,13 @@
                   the United States, the largest foreign-born population of any
                   city in the world as of 2016.[19][20] As of 2022
                 </p>
-                <button class="place-buy-btn js-buy-ticket">Buy Tickets</button>
+                <button class="place-buy-btn js-buy-ticket s-full-width">
+                  Buy Tickets
+                </button>
               </div>
             </div>
 
-            <div class="col col-third">
+            <div class="col col-third s-col-full mt-16">
               <img
                 src="/assets/img/place/place1.jpeg"
                 alt="Viet Nam"
@@ -138,11 +140,13 @@
                   the United States, the largest foreign-born population of any
                   city in the world as of 2016.[19][20] As of 2022
                 </p>
-                <button class="place-buy-btn js-buy-ticket">Buy Tickets</button>
+                <button class="place-buy-btn js-buy-ticket s-full-width">
+                  Buy Tickets
+                </button>
               </div>
             </div>
 
-            <div class="col col-third">
+            <div class="col col-third s-col-full mt-16">
               <img
                 src="/assets/img/place/place1.jpeg"
                 alt="New York"
@@ -158,7 +162,9 @@
                   the United States, the largest foreign-born population of any
                   city in the world as of 2016.[19][20] As of 2022
                 </p>
-                <button class="place-buy-btn js-buy-ticket">Buy Tickets</button>
+                <button class="place-buy-btn js-buy-ticket s-full-width">
+                  Buy Tickets
+                </button>
               </div>
             </div>
             <div class="clear"></div>
@@ -169,15 +175,21 @@
         <h2 class="section-heading">CONTACT</h2>
         <p class="section-sub-heading">Fan? Drop at here</p>
         <div class="row contact-content">
-          <div class="col col-half contact-info">
+          <div class="col col-half s-col-full contact-info">
             <p><i class="ti-location-pin"></i>Chicago, US</p>
-            <p><i class="ti-mobile"></i>Phone: ++00 151515</p>
-            <p><i class="ti-email"></i>Email: mail@mail.com</p>
+            <p>
+              <i class="ti-mobile"></i>Phone:
+              <a href="tel:+00 151515">+00 151515</a>
+            </p>
+            <p>
+              <i class="ti-email"></i>Email:
+              <a href="mailto:mail@mail.com">mail@mail.com</a>
+            </p>
           </div>
-          <div class="col col-half contact-form">
+          <div class="col col-half s-col-full contact-form">
             <form action="">
               <div class="row">
-                <div class="col col-half">
+                <div class="col col-half s-col-full">
                   <input
                     type="text"
                     name=""
@@ -187,7 +199,7 @@
                     class="form-control"
                   />
                 </div>
-                <div class="col col-half">
+                <div class="col col-half s-col-full s-mt-8">
                   <input
                     type="email"
                     name=""
@@ -210,7 +222,11 @@
                   />
                 </div>
               </div>
-              <input class="form-submit-btn mt-16" type="submit" value="SEND" />
+              <input
+                class="form-submit-btn mt-16 s-full-width"
+                type="submit"
+                value="SEND"
+              />
             </form>
           </div>
         </div>
@@ -320,8 +336,15 @@
 
       var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
       menuItems.forEach((element) => {
-        element.onclick = function () {
-          header.style.height = null;
+        element.onclick = function (event) {
+          var isParentMenu =
+            element.nextElementSibling &&
+            element.nextElementSibling.classList.contains("subnav");
+          if (!isParentMenu) {
+            header.style.height = null;
+          } else {
+            event.preventDefault();
+          }
         };
       });
     </script>
